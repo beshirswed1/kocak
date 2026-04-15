@@ -41,7 +41,7 @@ export function MapSection() {
               {map.googleMapsUrl && (
                 <>
                   <a
-                    href={"https://maps.app.goo.gl/Jg22HA4KQAFMYeTBA"}
+                    href={"https://maps.app.goo.gl/j6Tjq3Gy2KRhpGg39"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-3 rounded-xl bg-primary px-6 py-3.5 text-sm font-bold text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-lg hover:shadow-primary/25 w-fit"
@@ -50,7 +50,7 @@ export function MapSection() {
                     Yol Tarifi Al
                   </a>
                   <a
-                    href={"https://maps.app.goo.gl/Jg22HA4KQAFMYeTBA"}
+                    href={"https://maps.app.goo.gl/j6Tjq3Gy2KRhpGg39"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
