@@ -28,7 +28,7 @@ export const defaultInfo: RestaurantInfo = {
   reviewCount: 180,
   avgPrice: "$$",
   hours: "08:00 - 23:00",
-  googleMapsUrl: "https://maps.app.goo.gl/unxXnuAdSiyebeeHA",
+  googleMapsUrl: "https://maps.app.goo.gl/NRDc38gLyVWkuoCf8",
   googleMapsEmbed: "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3183.539637292018!2d37.38056765943139!3d37.06845235264766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1531e19f57fd2a61%3A0x64949945dfe472bf!2sKo%C3%A7ak%20Kebap%20%26%20Beyran!5e0!3m2!1sar!2str!4v1775015306858!5m2!1sar!2str\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
   services: [
     "İçeride servis",
