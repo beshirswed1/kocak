@@ -1,6 +1,6 @@
 "use client"
 
-import { Phone, Star } from "lucide-react"
+import { Star } from "lucide-react"
 import { useReveal } from "@/hooks/use-reveal"
 import { useAppSelector } from "@/store/hooks"
 
@@ -37,19 +37,10 @@ export function CTABanner() {
           visible ? "animate-fade-in-up delay-400" : "opacity-0"
         }`}>
           <a
-            href={`tel:${info.phone}`}
+            href="/menu"
             className="group flex items-center gap-2 rounded-xl bg-primary-foreground px-8 py-4 text-base font-bold text-primary shadow-lg transition-all duration-300 hover:bg-primary-foreground/90 hover:scale-105 hover:shadow-xl"
           >
-            <Phone className="h-5 w-5 transition-transform group-hover:rotate-12" />
-            Hemen Ara - {info.phone}
-          </a>
-          <a
-            href={`https://wa.me/${info.whatsapp}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-xl border-2 border-primary-foreground/30 px-8 py-4 text-base font-bold text-primary-foreground transition-all duration-300 hover:bg-primary-foreground/10 hover:border-primary-foreground/50"
-          >
-            WhatsApp ile Yazın
+            Menüyü İncele
           </a>
         </div>
       </div>

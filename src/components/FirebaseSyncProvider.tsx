@@ -12,10 +12,9 @@ import {
   updateMap,
   setMenuCategories,
 } from "@/store/slices/restaurantSlice";
-import { setOrders } from "@/store/slices/ordersSlice";
 import { db } from "@/lib/firebase";
-import { doc, onSnapshot, collection, query, orderBy } from "firebase/firestore";
-import type { MenuCategory, MenuItem, Order } from "@/types";
+import { doc, onSnapshot, collection } from "firebase/firestore";
+import type { MenuCategory, MenuItem } from "@/types";
 
 export function FirebaseSyncProvider() {
   const dispatch = useAppDispatch();
@@ -41,6 +40,7 @@ export function FirebaseSyncProvider() {
           ...(data.googleMapsEmbed && { googleMapsEmbed: data.googleMapsEmbed }),
           ...(data.services && { services: data.services }),
           ...(data.socialMedia && { socialMedia: data.socialMedia }),
+          isOrderingEnabled: data.isOrderingEnabled !== false,
         }));
       }
     });
@@ -142,16 +142,6 @@ export function FirebaseSyncProvider() {
       return () => unsubItems();
     });
 
-    // 9. Listen to Orders (real-time for admin dashboard)
-    const ordersQuery = query(collection(db, "orders"), orderBy("createdAt", "desc"));
-    const unsubOrders = onSnapshot(ordersQuery, (snapshot) => {
-      const ordersData: Order[] = [];
-      snapshot.forEach((d) => {
-        ordersData.push({ id: d.id, ...d.data() } as Order);
-      });
-      dispatch(setOrders(ordersData));
-    });
-
     return () => {
       unsubInfo();
       unsubHero();
@@ -161,7 +151,6 @@ export function FirebaseSyncProvider() {
       unsubSeo();
       unsubMap();
       unsubCats();
-      unsubOrders();
     };
   }, [dispatch]);
 

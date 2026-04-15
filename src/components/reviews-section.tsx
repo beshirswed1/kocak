@@ -106,7 +106,7 @@ export function ReviewsSection() {
         {info.googleMapsUrl && (
           <div className={`mt-8 text-center ${visible ? "animate-fade-in-up delay-600" : "opacity-0"}`}>
             <a
-              href={"https://maps.app.goo.gl/QdNKdyAaUoBepHaz8"}
+              href={"https://maps.app.goo.gl/Jg22HA4KQAFMYeTBA"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-300 hover:bg-secondary hover:scale-105 hover:shadow-md"

@@ -51,6 +51,7 @@ export default function AdminLanding() {
     city: "", hours: "", rating: 0, reviewCount: 0, avgPrice: "",
     googleMapsUrl: "", googleMapsEmbed: "",
     instagram: "", facebook: "", tiktok: "", youtube: "",
+    isOrderingEnabled: true,
   })
 
   // ─── Sync state from Redux ───────────────
@@ -63,6 +64,7 @@ export default function AdminLanding() {
       googleMapsEmbed: map.googleMapsEmbed || info.googleMapsEmbed,
       instagram: info.socialMedia?.instagram || "", facebook: info.socialMedia?.facebook || "",
       tiktok: info.socialMedia?.tiktok || "", youtube: info.socialMedia?.youtube || "",
+      isOrderingEnabled: info.isOrderingEnabled !== false,
     })
   }, [info, map])
 
@@ -84,6 +86,7 @@ export default function AdminLanding() {
           instagram: infoForm.instagram, facebook: infoForm.facebook,
           tiktok: infoForm.tiktok, youtube: infoForm.youtube,
         },
+        isOrderingEnabled: infoForm.isOrderingEnabled,
       }, { merge: true })
 
       // Save map
@@ -182,6 +185,20 @@ export default function AdminLanding() {
               <Input label="Fiyat Seviyesi" value={infoForm.avgPrice} onChange={(v: string) => setInfoForm({...infoForm, avgPrice: v})} placeholder="Örn: $$" dir="ltr" />
               <Input label="Google Puanı" value={infoForm.rating} onChange={(v: string) => setInfoForm({...infoForm, rating: Number(v)})} type="number" dir="ltr" />
               <Input label="Değerlendirme Sayısı" value={infoForm.reviewCount} onChange={(v: string) => setInfoForm({...infoForm, reviewCount: Number(v)})} type="number" dir="ltr" />
+            </div>
+            
+            <div className="pt-5 mt-5 border-t border-gray-100/80">
+              <h3 className="text-sm font-bold text-gray-900 border-l-4 border-primary pl-3 mb-4">Sistem Özellikleri</h3>
+              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100">
+                <div>
+                  <p className="font-semibold text-gray-900 text-sm">Sipariş / Sepet Özelliği</p>
+                  <p className="text-xs text-gray-500 mt-1">Aktif olduğunda müşteriler sepete ürün ekleyip sipariş gönderebilir. Kapatılırsa menü sadece sergi/görünüm amaçlı olur.</p>
+                </div>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" className="sr-only peer" checked={infoForm.isOrderingEnabled} onChange={(e) => setInfoForm({...infoForm, isOrderingEnabled: e.target.checked})} />
+                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                </label>
+              </div>
             </div>
           </Card>
         </div>

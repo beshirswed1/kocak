@@ -2,13 +2,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { Order, OrderStatus } from "@/types";
 
 interface OrdersState {
-  orders: Order[];
-  loading: boolean;
+  items: Order[];
 }
 
 const initialState: OrdersState = {
-  orders: [],
-  loading: true,
+  items: [],
 };
 
 export const ordersSlice = createSlice({
@@ -16,23 +14,20 @@ export const ordersSlice = createSlice({
   initialState,
   reducers: {
     setOrders: (state, action: PayloadAction<Order[]>) => {
-      state.orders = action.payload;
-      state.loading = false;
+      state.items = action.payload;
     },
-    updateOrderStatus: (
-      state,
-      action: PayloadAction<{ id: string; status: OrderStatus }>
-    ) => {
-      const order = state.orders.find((o) => o.id === action.payload.id);
+    updateOrderStatusRedux: (state, action: PayloadAction<{ id: string; status: OrderStatus }>) => {
+      const order = state.items.find(o => o.id === action.payload.id);
       if (order) {
         order.status = action.payload.status;
       }
     },
-    removeOrder: (state, action: PayloadAction<string>) => {
-      state.orders = state.orders.filter((o) => o.id !== action.payload);
-    },
+    removeOrderRedux: (state, action: PayloadAction<string>) => {
+      state.items = state.items.filter(o => o.id !== action.payload);
+    }
   },
 });
 
-export const { setOrders, updateOrderStatus, removeOrder } = ordersSlice.actions;
+export const { setOrders, updateOrderStatusRedux, removeOrderRedux } = ordersSlice.actions;
+
 export default ordersSlice.reducer;

@@ -4,7 +4,7 @@ import Image from "next/image"
 import { CheckCircle2 } from "lucide-react"
 import { useReveal } from "@/hooks/use-reveal"
 import { useAppSelector } from "@/store/hooks"
-import yemek from "../../public/hakkimizda.jpeg"
+import yemek from "../../public/yemek.jpeg"
 
 export function AboutSection() {
   const { ref, visible } = useReveal()
@@ -38,7 +38,7 @@ export function AboutSection() {
             <h2 className="mt-2 font-serif text-3xl font-bold text-foreground md:text-4xl text-balance">
               {about.title}
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed text-pretty whitespace-pre-wrap">
+            <p className="mt-4 text-muted-foreground leading-relaxed text-pretty">
               {about.description}
             </p>
 

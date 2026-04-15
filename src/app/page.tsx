@@ -10,7 +10,6 @@ import { ReviewsSection } from "@/components/reviews-section"
 import { VideoSection } from "@/components/video-section"
 import { CTABanner } from "@/components/cta-banner"
 import { MapSection } from "@/components/map-section"
-import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { FloatingCTA } from "@/components/floating-cta"
 
@@ -30,7 +29,6 @@ export default function Home() {
         <VideoSection />
         <CTABanner />
         <MapSection />
-        <ContactSection />
       </main>
       <Footer />
       <FloatingCTA />

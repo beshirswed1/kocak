@@ -1,6 +1,6 @@
 "use client"
 
-import { Phone, MapPin, Clock, LucideCheckCircle2, LucideMoveRight } from "lucide-react"
+import { MapPin, Clock, LucideCheckCircle2, LucideMoveRight } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faInstagram,
@@ -43,9 +43,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-primary-foreground/70">
-              2008’den beri Koçak Kebap, Gaziantep’in köklü kebap geleneğini aslına sadık kalarak yaşatıyor.
-              Tüm kebaplar, geleneksel tarifler ve eski usullerle özenle hazırlanıyor.
-              Gerçek Antep lezzetini keşfetmek için sizi bekliyoruz.
+              {info.description}
             </p>
           </div>
 
@@ -67,16 +65,6 @@ export function Footer() {
               İletişim Bilgileri
             </h3>
             <div className="flex flex-col gap-5">
-              <a
-                href={`tel:${info.phone}`}
-                className="group flex flex-col gap-1 text-sm text-primary-foreground/70 hover:text-primary transition-colors duration-300"
-              >
-                <div className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-primary" />
-                  <span className="font-medium text-primary-foreground/90 group-hover:text-primary transition-colors">Telefon</span>
-                </div>
-                <span className="pl-6">{info.phone}</span>
-              </a>
               <a
                 href={"https://maps.app.goo.gl/Jg22HA4KQAFMYeTBA"}
                 target="_blank"
@@ -130,9 +118,6 @@ export function Footer() {
                   <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
                 </a>
               )}
-              <a href={`https://wa.me/${info.whatsapp}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-foreground/5 border border-primary-foreground/10 hover:bg-primary hover:border-primary text-primary-foreground hover:text-foreground transition-all duration-300 hover:-translate-y-1" aria-label="WhatsApp">
-                <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" />
-              </a>
             </div>
           </div>
         </div>

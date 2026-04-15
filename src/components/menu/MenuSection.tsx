@@ -52,16 +52,10 @@ export function MenuSection() {
 
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center justify-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-sm font-medium shadow-sm">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-            </span>
-            Canlı Menü
-          </div>
+
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground tracking-tight">
-            Lezzet <span className="text-primary">Menümüz</span>
+            <span className="text-primary">Menümüz</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
             Özenle hazırladığımız eşsiz lezzetleri keşfedin. Siparişiniz saniyeler içinde mutfağımıza iletilir.

@@ -8,6 +8,7 @@ export type FirebaseMenuItem = {
   id: string; // Keep ID for keys & unique references
   name: string;
   price: number;
+  halfPortionPrice?: number | null;
   description: string;
   image: string;
   category: string;

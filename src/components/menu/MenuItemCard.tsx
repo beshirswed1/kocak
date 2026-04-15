@@ -1,12 +1,17 @@
+"use client"
+
 import Image from "next/image"
 import { AddToCartButton } from "./AddToCartButton"
 import type { MenuItem } from "@/types"
+import { useAppSelector } from "@/store/hooks"
 
 interface MenuItemCardProps {
   item: MenuItem
 }
 
 export function MenuItemCard({ item }: MenuItemCardProps) {
+  const info = useAppSelector((state) => state.restaurant.info)
+
   return (
     <div
       className={`group flex flex-col bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:border-[#8C2C16]/30 ${!item.isAvailable ? "opacity-75" : ""
@@ -55,22 +60,32 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
             <h4 className="font-serif font-bold text-sm sm:text-xl lg:text-2xl text-gray-900 leading-tight line-clamp-2">
               {item.name}
             </h4>
-            <span className="font-sans font-bold text-[#8C2C16] text-xs sm:text-lg whitespace-nowrap bg-[#F5E6E2] px-2 py-0.5 sm:px-3 sm:py-1 rounded-md sm:rounded-lg w-fit mt-1 sm:mt-0">
-              ₺{item.price}
-            </span>
+            <div className="flex items-center gap-1 sm:gap-2 mt-1 sm:mt-0">
+              {item.halfPortionPrice && (
+                <span className="font-sans font-bold text-[#8C2C16] text-[10px] sm:text-sm whitespace-nowrap bg-[#F5E6E2]/60 border border-[#8C2C16]/10 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded flex items-center gap-0.5 shadow-sm">
+                  <span className="text-[8px] sm:text-[10px] opacity-80 uppercase">Y/</span>
+                  ₺{item.halfPortionPrice}
+                </span>
+              )}
+              <span className="font-sans font-bold text-[#8C2C16] text-xs sm:text-lg whitespace-nowrap bg-[#F5E6E2] px-2 py-0.5 sm:px-3 sm:py-1 rounded-md sm:rounded-lg w-fit shadow-sm border border-[#8C2C16]/20">
+                ₺{item.price}
+              </span>
+            </div>
           </div>
 
           {/* Description */}
           {/* سطر واحد في الجوال عشان ما يأخذ مساحة، وسطرين في الشاشات الكبيرة */}
-          <p className="text-[11px] sm:text-[14px] text-gray-500 line-clamp-1 sm:line-clamp-2 leading-relaxed mb-3 sm:mb-6">
+          <p className="text-[11px] sm:text-[14px] text-gray-500 sm:line-clamp-2 leading-relaxed mb-3 sm:mb-6">
             {item.description}
           </p>
         </div>
 
         {/* Add To Cart Button */}
-        <div className="mt-auto">
-          <AddToCartButton item={item} />
-        </div>
+        {info.isOrderingEnabled !== false && (
+          <div className="mt-auto">
+            <AddToCartButton item={item} />
+          </div>
+        )}
       </div>
     </div>
   )

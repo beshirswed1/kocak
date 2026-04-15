@@ -8,7 +8,8 @@ import { useEffect, useState } from "react";
 
 export default function AdminDashboard() {
   const info = useDynamic();
-  const pendingCount = useAppSelector((s) => s.orders.orders.filter((o) => o.status === "pending").length);
+  const orders = useAppSelector(s => s.orders.items);
+  const pendingOrders = orders.filter(o => o.status === "pending").length;
   const [time, setTime] = useState("");
 
   useEffect(() => {
@@ -24,13 +25,13 @@ export default function AdminDashboard() {
   // إضافة تدرجات لونية فخمة لكل كرت
   const cards = [
     {
-      title: "Siparişler",
+      title: "Sipariş Yönetimi",
       icon: ClipboardList,
       href: "/admin/orders",
-      desc: "Gelen siparişleri takip edin, onaylayın veya iptal edin.",
-      color: "from-purple-500 to-violet-600",
-      glow: "group-hover:shadow-purple-500/20",
-      badge: pendingCount > 0 ? pendingCount : undefined
+      desc: "Gelen siparişleri görüntüle, onayla veya iptal et.",
+      color: "from-red-500 to-rose-600",
+      glow: "group-hover:shadow-red-500/20",
+      badge: pendingOrders > 0 ? `${pendingOrders} Yeni` : undefined
     },
     {
       title: "Ürün Yönetimi",
@@ -118,20 +119,22 @@ export default function AdminDashboard() {
                   <card.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white drop-shadow-md" />
                 </div>
 
-                {/* سهم الدخول */}
-                <div className="w-8 h-8 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-white group-hover:shadow-md transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                  <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-900 transition-colors" />
+                {/* سهم الدخول والبادج */}
+                <div className="flex items-center gap-2">
+                  {card.badge && (
+                    <span className="bg-red-500 text-white text-[10px] sm:text-xs font-bold px-2 py-1 rounded-full shadow-sm animate-pulse">
+                      {card.badge}
+                    </span>
+                  )}
+                  <div className="w-8 h-8 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-white group-hover:shadow-md transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                    <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-900 transition-colors" />
+                  </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-600 transition-all duration-300 flex items-center gap-2">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-600 transition-all duration-300">
                   {card.title}
-                  {card.badge && (
-                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-600 animate-pulse">
-                      {card.badge}
-                    </span>
-                  )}
                 </h3>
                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed line-clamp-2">
                   {card.desc}

@@ -11,10 +11,13 @@ export function MenuCategory({ title, items }: MenuCategoryProps) {
 
   return (
     <section className="scroll-mt-24 mb-16" id={title.toLowerCase().replace(/\s+/g, '-')}>
-      <h3 className="font-serif text-2xl font-bold mb-6 flex items-center gap-3 text-foreground">
-        <span className="w-8 h-[2px] bg-primary/50"></span>
-        {title}
-      </h3>
+      <div className="flex items-center gap-4 mb-8">
+        <h3 className="font-serif text-2xl sm:text-3xl font-extrabold text-foreground flex items-center gap-3">
+          <span className="w-10 sm:w-12 h-[3px] bg-gradient-to-r from-primary to-[#F0A84D] rounded-full shadow-sm"></span>
+          {title}
+        </h3>
+        <div className="h-[1px] flex-1 bg-gradient-to-r from-border to-transparent"></div>
+      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 2xl:gap-10">
         {items.map((item) => (
