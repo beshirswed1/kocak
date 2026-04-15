@@ -66,7 +66,7 @@ export function Footer() {
             </h3>
             <div className="flex flex-col gap-5">
               <a
-                href={"https://maps.app.goo.gl/Jg22HA4KQAFMYeTBA"}
+                href={"https://maps.app.goo.gl/U76X5AWorEcchBkCA"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col gap-1 text-sm text-primary-foreground/70 hover:text-primary transition-colors duration-300"
