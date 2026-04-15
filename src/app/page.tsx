@@ -20,7 +20,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <TrustSignals />
-        <PopularItems />
+        <PopulgiarItems />
         <MenuCTA />
         <NewItems />
         {/* <OffersSection /> */}

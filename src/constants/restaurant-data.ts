@@ -22,7 +22,7 @@ export const defaultInfo: RestaurantInfo = {
     "2008 yılından beri, Gaziantep'in köklü kebap kültürünü yaşatıyor ve sofralarınıza taşıyoruz. Geleneksel Antep kebaplarının kültürüne, dokusuna ve tarihsel tatlarına sadık kalarak, geçmişin lezzetlerini günümüzde de yaşatıyoruz.",
   phone: "0535 456 95 88",
   whatsapp: "+90 535 456 95 88",
-  address: "İncilipınar, Kamil Ocak Cd. No:1/tic15 Merkez, 27000 Şehitkamil/Gaziantep",
+  address: "incilipınar kamil ocak cd. no:1/tic15 merkez, 27000 Şehitkamil/Gaziantep",
   city: "Gaziantep",
   rating: 4.4,
   reviewCount: 180,
