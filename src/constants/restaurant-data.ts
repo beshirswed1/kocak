@@ -28,7 +28,7 @@ export const defaultInfo: RestaurantInfo = {
   reviewCount: 180,
   avgPrice: "$$",
   hours: "08:00 - 23:00",
-  googleMapsUrl: "https://maps.app.goo.gl/tstcig5Y73WL5vsj7",
+  googleMapsUrl: "https://www.google.com/maps/place/Ko%C3%A7ak+Kebap+%26+Beyran/@37.0683384,37.3779439,18.56z/data=!4m14!1m7!3m6!1s0x1531e5c7c3e04fb9:0x371d18030a36300!2sCigerci+Mustafa!8m2!3d37.0678939!4d37.3793525!16s%2Fg%2F1hc5wxd_1!3m5!1s0x1531e19f57fd2a61:0x64949945dfe472bf!8m2!3d37.0684481!4d37.3779981!16s%2Fg%2F11y36wkcqs!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D",
   googleMapsEmbed: "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3183.539637292018!2d37.38056765943139!3d37.06845235264766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1531e19f57fd2a61%3A0x64949945dfe472bf!2sKo%C3%A7ak%20Kebap%20%26%20Beyran!5e0!3m2!1sar!2str!4v1775015306858!5m2!1sar!2str\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
   services: [
     "İçeride servis",
