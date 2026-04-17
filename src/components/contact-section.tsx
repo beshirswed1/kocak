@@ -74,7 +74,7 @@ export function ContactSection() {
 
               {/* Address */}
               <a
-                href={"https://maps.app.goo.gl/tstcig5Y73WL5vsj7"}
+                href={info.googleMapsUrl || "https://www.google.com/maps/place/Ko%C3%A7ak+Kebap+%26+Beyran/@37.0683384,37.3779439,18.56z/data=!4m14!1m7!3m6!1s0x1531e5c7c3e04fb9:0x371d18030a36300!2sCigerci+Mustafa!8m2!3d37.0678939!4d37.3793525!16s%2Fg%2F1hc5wxd_1!3m5!1s0x1531e19f57fd2a61:0x64949945dfe472bf!8m2!3d37.0684481!4d37.3779981!16s%2Fg%2F11y36wkcqs!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 rounded-xl bg-card border border-border p-4 transition-all duration-300 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1"
