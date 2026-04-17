@@ -74,7 +74,7 @@ export function ContactSection() {
 
               {/* Address */}
               <a
-                href={"https://maps.app.goo.gl/Jg22HA4KQAFMYeTBA"}
+                href={"https://maps.app.goo.gl/tstcig5Y73WL5vsj7"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 rounded-xl bg-card border border-border p-4 transition-all duration-300 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1"
